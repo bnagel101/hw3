@@ -2,6 +2,7 @@
 #include <fstream>
 #include <functional>
 #include "llrec.h"
+#include "stack.h"
 using namespace std;
 
 /**
@@ -67,7 +68,12 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
+struct CompOdd{
 
+    bool operator()(int a){
+        return (a%2 == 0);
+    }
+};
 
 
 
@@ -86,10 +92,16 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
-
-
-
-    
+    CompOdd a;
+    head = llfilter(head, a);
+    //llpivot(head, s, l, 10);
+    print(head);
+    int c = 2;
+    int b = 3;
+    Stack<int> t;
+    t.push(c);
+    t.push(b);
+    cout << endl << t.top() << endl;
     return 0;
 
 }
