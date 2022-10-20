@@ -11,9 +11,13 @@ class Stack: private std::vector<T>
 public:
     Stack();
     ~Stack() = default;
+    //returns wether stack is empty
     bool empty() const;
+    //returns size
     size_t size() const;
+    //adds item to back
     void push(const T& item);
+    //removes item from back
     void pop();  // throws std::underflow_error if empty
     const T& top() const; // throws std::underflow_error if empty
     // Add other members only if necessary
@@ -54,6 +58,7 @@ void Stack<T>::pop(){
     }
 }
 
+//need to scope to vector class to use its functions
 template <typename T>
 const T& Stack<T>::top() const{
     if(Stack<T>::size() <= 0){
