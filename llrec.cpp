@@ -10,11 +10,19 @@
 //larger than pivot; uses struct node 
 void llpivot(Node*& head, Node*& smaller, Node*& larger, int pivot){
 
+	if(head == nullptr){
+		smaller = nullptr;
+		larger = nullptr;
+		return;
+	}
+
 	if(head->next == NULL){
 		if(head->val <= pivot){
 			smaller = head;
+			larger = NULL;
 		}else{
 			larger = head;
+			smaller = NULL;
 		}
 		head = NULL;
 	}

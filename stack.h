@@ -65,7 +65,7 @@ const T& Stack<T>::top() const{
         throw std::underflow_error("No items in Stack");
     }
     else{
-        return std::vector<T>::operator[](0);
+        return std::vector<T>::operator[](std::vector<T>::size()-1);
     }
     
 }
